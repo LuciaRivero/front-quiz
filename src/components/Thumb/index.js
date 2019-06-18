@@ -8,7 +8,7 @@ class Thumb extends Component {
     title: PropTypes.string,
     classes: PropTypes.string,
     src: PropTypes.string.isRequired,
-    srcHover: PropTypes.string.isRequired
+    srcHover: PropTypes.string
   };
 
   state = {
