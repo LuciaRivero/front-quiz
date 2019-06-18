@@ -16,11 +16,16 @@ const compare = {
   }
 };
 
-export const fetchProducts = (filters, sortBy, callback) => dispatch => {
+export const fetchProducts = (termFilter, filters, sortBy, callback) => dispatch => {
   return axios
     .get(productsAPI)
     .then(res => {
       let { products } = res.data;
+
+      if (!!termFilter) {
+        const termFilterLowered = termFilter.toLowerCase();
+        products = products.filter(product => product.title.toLowerCase().includes(termFilterLowered))
+      }
 
       if (!!filters && filters.length > 0) {
         products = products.filter(p =>

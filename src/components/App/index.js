@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Shelf from '../Shelf';
 import Filter from '../Shelf/Filter';
-import FloatCart from '../FloatCart';
+import Router from '../Router/Router';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           <Filter />
           <Shelf />
         </main>
-        <FloatCart />
+        <Router/>
       </React.Fragment>
     );
   }
